@@ -3,7 +3,7 @@ const express = require("express");
 let app = express();
 // const {form1,form2,form3}=require("./public/db/index")
 
-app.use(express.static(__dirname +'/public'))
+app.use(express.static(__dirname +'/./public'))
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -12,9 +12,9 @@ app.use(express.urlencoded({ extended: true }));
 // })
 
 // const data = {}
-// app.get('/app',(req,res)=>{
-//     res.sendFile(__dirname+'/./compiled/public/app.js')
-// })
+app.get('/app',(req,res)=>{
+    res.sendFile(__dirname+'/./public/bundle.js')
+})
 
 // app.post('/checkout',(req,res)=>{
 //     console.log(req.body)
